@@ -5,15 +5,35 @@
 <aplicacion nombre="Saboreate"> 
 	
 	<!--
-	Un módulo por defecto se asume para cada
+	Un mï¿½dulo por defecto se asume para cada
 	controlador en <modulo-defecto/> 
 	-->
 	<modulo-defecto>		  
 		<controlador nombre="Typical"/>		
 	</modulo-defecto>
-	
+
+	<modulo nombre="Pedido">
+		<modelo nombre="Pedido"/>
+		<controlador nombre="Typical"/>
+	</modulo>
+
+	<modulo nombre="Producto">
+		<modelo nombre="Producto"/>
+		<controlador nombre="Typical"/>
+	</modulo>
+
+	<modulo nombre="Cliente">
+		<modelo nombre="Cliente"/>
+		<controlador nombre="Typical"/>
+	</modulo>
+
+	<modulo nombre="Personal">
+		<modelo nombre="Personal"/>
+		<controlador nombre="Typical"/>
+	</modulo>
+
 	<!--
-	Podemos definir módulos adicionales, por ejemplo: 	
+	Podemos definir mdulos adicionales, por ejemplo: 	
 	<modulo nombre="ProfesorSoloLectura">
 		<modelo nombre="Profesor"/>
 		<controlador nombre="Print"/>
