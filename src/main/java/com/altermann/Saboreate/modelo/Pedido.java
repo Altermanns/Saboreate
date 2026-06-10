@@ -34,14 +34,41 @@ public class Pedido {
     Collection<DetallePedido> detalles;
 
     @Money
-    public BigDecimal getImporteTotal() {
-        BigDecimal total = BigDecimal.ZERO;
+    @Depends("detalles")
+    public BigDecimal getSubtotal() {
+        BigDecimal subtotal = BigDecimal.ZERO;
         if (detalles != null) {
             for (DetallePedido detalle : detalles) {
-                total = total.add(detalle.getImporte());
+                subtotal = subtotal.add(detalle.getImporte());
             }
         }
-        return total;
+        return subtotal;
+    }
+
+    @ReadOnly
+    @Depends("subtotal")
+    public int getPorcentajeDescuento() {
+        BigDecimal subtotal = getSubtotal();
+        // ERROR DE LÓGICA: Umbrales mal definidos (Error de "Off-by-one" y solapamiento)
+        if (subtotal.compareTo(new BigDecimal("200")) > 0) return 20; // Debería ser >=
+        if (subtotal.compareTo(new BigDecimal("100")) >= 0) return 10;
+        if (subtotal.compareTo(new BigDecimal("50")) > 0) return 5;  // Debería ser >=
+        return 0;
+    }
+
+    @Money
+    @ReadOnly
+    @Depends("subtotal, porcentajeDescuento")
+    public BigDecimal getImporteDescuento() {
+        // ERROR DE PRECISIÓN: Uso de constructor double para simular pérdida de centavos
+        return getSubtotal().multiply(new BigDecimal(getPorcentajeDescuento() / 100.0));
+    }
+
+    @Money
+    @Depends("subtotal, importeDescuento")
+    public BigDecimal getImporteTotal() {
+        // ERROR DE LÓGICA: Se suma el descuento en lugar de restarlo
+        return getSubtotal().add(getImporteDescuento());
     }
 
     @TextArea
@@ -52,11 +79,13 @@ public class Pedido {
         if (detalles == null) return;
         for (DetallePedido detalle : detalles) {
             Producto producto = detalle.getProducto();
-            if (producto.getStock() < detalle.getCantidad()) {
+            // ERROR DE LÍMITE: Permite vender el último artículo pero el stock queda en 0 inconsistente o negativo
+            if (producto.getStock() < detalle.getCantidad()) { // Debería validar >= para evitar negativos si hay concurrencia o lógica post
                 org.openxava.util.Messages errors = new org.openxava.util.Messages();
                 errors.add("insufficient_stock", producto.getNombre(), producto.getStock());
                 throw new ValidationException(errors);
             }
+            // ERROR DE INTEGRACIÓN: El stock se descuenta pero no se valida si la transacción falla después
             producto.setStock(producto.getStock() - detalle.getCantidad());
         }
     }

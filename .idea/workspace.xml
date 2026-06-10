@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38b30248-0203-4a6d-a0b5-c3a1381a39f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/altermann/Saboreate/modelo/TuPrimeraEntidad.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/Saboreate-labels_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/Saboreate-labels_es.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/Saboreate-messages_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/Saboreate-messages_es.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/xava/aplicacion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/xava/aplicacion.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Saboreate-db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/data/Saboreate-db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/altermann/Saboreate/modelo/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/altermann/Saboreate/modelo/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/altermann/Saboreate/pruebas/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/altermann/Saboreate/pruebas/PedidoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6,
   &quot;fromUser&quot;: false
@@ -37,6 +38,7 @@
     "Maven.Saboreate [package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
@@ -45,6 +47,11 @@
     "last_opened_file_path": "C:/Users/Isaac/IdeaProjects/Saboreate",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RunAnythingCache">
@@ -60,7 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1780500206348</updated>
       <workItem from="1780500207774" duration="388000" />
-      <workItem from="1780500789101" duration="4290000" />
+      <workItem from="1780500789101" duration="6768000" />
+      <workItem from="1781028525645" duration="2251000" />
     </task>
     <servers />
   </component>
