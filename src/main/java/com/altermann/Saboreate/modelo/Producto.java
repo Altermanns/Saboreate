@@ -31,4 +31,27 @@ public class Producto {
     @Required
     int stock;
 
+    int stockMinimo;
+
+    int prediccionDemanda;
+
+    @ReadOnly
+    @Depends("stock, stockMinimo, prediccionDemanda")
+    public String getAnalisisInventario() {
+        if (stock < stockMinimo) {
+            if (prediccionDemanda > (stockMinimo * 1.5)) {
+                return "ABASTECIMIENTO URGENTE: INCREMENTAR ORDEN";
+            } else {
+                return "ABASTECIMIENTO URGENTE: ORDEN ESTÁNDAR";
+            }
+        } else {
+            if (stock >= prediccionDemanda) {
+                return "INVENTARIO ÓPTIMO / EN TRÁNSITO";
+            } else {
+                return "SUGERIR TRANSFERENCIA DE INSUMOS";
+            }
+        }
+    }
+
 }
+

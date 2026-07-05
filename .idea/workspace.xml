@@ -7,8 +7,8 @@
     <list default="true" id="38b30248-0203-4a6d-a0b5-c3a1381a39f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Saboreate-db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/data/Saboreate-db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/altermann/Saboreate/modelo/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/altermann/Saboreate/modelo/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/altermann/Saboreate/pruebas/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/altermann/Saboreate/pruebas/PedidoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Saboreate-db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/data/Saboreate-db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Saboreate-db.script" beforeDir="false" afterPath="$PROJECT_DIR$/data/Saboreate-db.script" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,33 +31,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Saboreate.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.Saboreate [package].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Isaac/IdeaProjects/Saboreate",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Saboreate.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Saboreate [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;appmod/java-upgrade-20260618003352&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Isaac/IdeaProjects/Saboreate&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn package" />
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Saboreate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.altermann.Saboreate.run.Saboreate" />
+      <module name="Saboreate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.altermann.Saboreate.run.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Saboreate" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,10 +89,23 @@
       <workItem from="1780500207774" duration="388000" />
       <workItem from="1780500789101" duration="6768000" />
       <workItem from="1781028525645" duration="2251000" />
+      <workItem from="1781743226634" duration="2196000" />
+      <workItem from="1782264010636" duration="86000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
