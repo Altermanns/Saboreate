@@ -29,9 +29,6 @@ pipeline {
         }
 
         stage('2. Build (Compilación)') {
-            when {
-                anyOf { branch 'main'; branch 'develop'; branch 'feature/*' }
-            }
             steps {
                 echo '=== [ETAPA 2] Compilando el proyecto Java/Maven ==='
                 sh 'mvn clean compile -DskipTests'
@@ -57,9 +54,6 @@ pipeline {
         }
 
         stage('4. Pruebas E2E (Selenium / Cypress)') {
-            when {
-                branch 'develop'
-            }
             steps {
                 echo '=== [ETAPA 4] Levantando entorno efímero y ejecutando Selenium/Cypress ==='
                 // sh 'npm install cypress && npx cypress run'
