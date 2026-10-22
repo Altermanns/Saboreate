@@ -46,11 +46,13 @@ pipeline {
                         sh 'mvn test'
                     }
                 }
+
                 stage('Análisis Estático (SonarCloud)') {
                     steps {
-                        echo 'Enviando código a SonarCloud para revisión de Linter y vulnerabilidades...'
+                        echo 'Enviando código a SonarCloud...'
                         withCredentials([string(credentialsId: 'sonarcloud-token', variable: 'SONAR_TOKEN')]) {
-                            sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN}'                        }
+                            sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml'
+                        }
                     }
                 }
             }
@@ -61,8 +63,8 @@ pipeline {
                 branch 'develop'
             }
             steps {
-                echo '=== [ETAPA 4] Levantando entorno efímero y ejecutando Selenium/Cypress ==='
-                // sh 'npm install cypress && npx cypress run'
+                echo '[ETAPA 4] Levantando entorno efímero y ejecutando Selenium/Cypress ==='
+                 sh 'npm install cypress && npx cypress run'
                 sh 'mvn verify -P e2e-tests || echo "Placeholder: Configurar perfil de pruebas de interfaz"'
             }
         }
