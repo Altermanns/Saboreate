@@ -38,22 +38,18 @@ pipeline {
             }
         }
 
-        stage('3. Pruebas Unitarias y Calidad de Código') {
-            parallel {
-                stage('Pruebas Unitarias (JUnit 5)') {
-                    steps {
-                        echo 'Ejecutando suite de pruebas...'
-                        sh 'mvn test'
-                    }
-                }
-
-                stage('Análisis Estático (SonarCloud)') {
-                    steps {
-                        echo 'Enviando código a SonarCloud...'
-                        withCredentials([string(credentialsId: 'sonarcloud-token', variable: 'SONAR_TOKEN')]) {
-                            sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml'
-                        }
-                    }
+        stage('3. Pruebas Unitarias') {
+            steps {
+                echo 'Ejecutando suite de pruebas y generando reporte JaCoCo...'
+                sh 'mvn clean test'
+            }
+        }
+        
+        stage('4. Análisis Estático (SonarCloud)') {
+            steps {
+                echo 'Enviando código y reporte de cobertura a SonarCloud...'
+                withCredentials([string(credentialsId: 'sonarcloud-token', variable: 'SONAR_TOKEN')]) {
+                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml'
                 }
             }
         }
