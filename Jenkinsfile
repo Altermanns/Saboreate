@@ -62,7 +62,7 @@ pipeline {
             }
             steps {
                 echo '=== [ETAPA 4] Levantando entorno efímero y ejecutando Selenium/Cypress ==='
-                // sh 'npm install cypress && npx cypress run'
+                 sh 'npm install cypress && npx cypress run'
                 sh 'mvn verify -P e2e-tests || echo "Placeholder: Configurar perfil de pruebas de interfaz"'
             }
         }
