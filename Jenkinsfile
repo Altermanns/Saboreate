@@ -14,7 +14,7 @@ pipeline {
         SONAR_PROJECT_KEY = "saboreate-app"
 
         TELEGRAM_TOKEN = credentials('001')
-        TELEGRAM_CHAT  = credentials('0001')
+        TELEGRAM_CHAT  = credentials('0001','0002')
     }
 
     stages {
