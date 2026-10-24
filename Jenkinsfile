@@ -15,6 +15,7 @@ pipeline {
 
         TELEGRAM_TOKEN = credentials('001')
         TELEGRAM_CHAT  = credentials('0001')
+        TELEGRAM_CHAT  = credentials('0002')
     }
 
     stages {
